@@ -1,0 +1,76 @@
+.reports-page { display:block; }
+
+.filters-paper { padding: 14px; border-radius: 12px; background: #fff; box-shadow: 0 8px 24px rgba(16,24,40,0.04); }
+
+.summary-paper { padding: 16px; border-radius: 12px; background: #fff; box-shadow: 0 8px 24px rgba(16,24,40,0.04); }
+.summary-card { border-radius: 12px; box-shadow: 0 8px 20px rgba(16,24,40,0.04); }
+.summary-card .card-label { color: #475569; }
+.summary-card .card-value { color: #083344; }
+
+/* Make summary cards equal height and full width on small screens */
+@media (max-width: 720px) {
+  .summary-card {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Mobile card adjustments for fund chips and spacing */
+@media (max-width: 480px) {
+  .fund-chip { padding: 6px 8px; }
+  .fund-stack { gap: 6px; }
+}
+
+.fund-stack { margin-top: 8px; }
+.fund-chip { border-radius: 999px; padding: 6px 10px; background: linear-gradient(90deg, rgba(14,165,233,0.06), rgba(59,130,246,0.04)); color: #083344; font-weight:600; box-shadow: 0 6px 18px rgba(16,24,40,0.04); margin-right:6px; }
+
+.rows-paper { margin-top: 8px; padding: 12px; border-radius: 12px; }
+.reports-table { min-width: 960px; }
+.reports-table thead .tbl-head { color: #0f172a; font-weight:700; }
+.reports-table tbody tr { background: #fff; border-radius: 8px; transition: transform 180ms ease, box-shadow 180ms ease; }
+.reports-table tbody tr td { padding: 12px 10px; vertical-align: middle; }
+.reports-table tbody tr:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(16,24,40,0.08); }
+
+/* Zebra stripes and left accent */
+.reports-table tbody tr:nth-child(odd) { background: rgba(244,246,248,0.6); }
+.reports-table tbody tr { border-left: 4px solid transparent; }
+.reports-table tbody tr:hover { border-left-color: rgba(14,165,233,0.18); }
+
+/* Emphasize fine/renewal/total cells */
+.reports-table td.fine { color: #b91c1c; font-weight:700; }
+.reports-table td.renewal { color: #b45309; font-weight:700; }
+.reports-table td.total { color: #0b5e52; font-weight:800; }
+
+.student-name { font-weight:700; color:#064e3b; }
+.class-name, .teacher-name { color:#475569; }
+.total { font-weight:800; color:#0b5e52; }
+
+@media (max-width: 720px) {
+  .reports-table { min-width: 560px; }
+  .fund-chip { padding: 5px 8px; font-size: 0.86rem; }
+  .summary-card { margin-bottom: 8px; }
+  .filters-paper { padding: 10px; }
+}
+
+@media (max-width: 480px) {
+  .summary-paper .MuiGrid-root { display: block; }
+  .summary-card { width: 100%; margin-bottom: 10px; }
+  .filters-paper .MuiStack-root { gap: 8px; }
+  .fund-stack { gap: 6px; }
+  .reports-table thead { display: none; }
+  .reports-table tbody tr { display: block; margin-bottom: 12px; }
+  .reports-table tbody tr td { display: block; padding: 8px 10px; }
+}
+
+/* Mobile card styling for rows (applies when MUI Card is used on small screens) */
+.rows-paper .MuiCard-root { border-radius: 12px; box-shadow: 0 12px 30px rgba(16,24,40,0.06); padding: 12px; background: linear-gradient(180deg,#ffffff,#fbfeff); }
+.rows-paper .MuiCard-root .MuiCardContent-root { padding: 6px 8px; }
+.rows-paper .MuiCard-root .MuiTypography-subtitle1 { font-weight:700; color:#064e3b; }
+.rows-paper .MuiCard-root .MuiTypography-body2 { color:#475569; margin-top:6px; }
+.rows-paper .MuiCard-root .MuiTypography-caption { color:#94a3b8; margin-top:8px; display:block; }
+
+/* Make action area sticky at bottom on mobile (if used) */
+.rows-paper .MuiCardActions-root { justify-content: flex-end; padding-top: 8px; }
