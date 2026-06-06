@@ -1,0 +1,175 @@
+.principal-dashboard {
+  display: block;
+  gap: 16px;
+}
+
+/* Stat cards row */
+.principal-dashboard .stat-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #e9afaf 0%, #fbfdff 100%);
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+
+.principal-dashboard .stat-card .MuiTypography-root {
+  margin: 0;
+}
+
+/* Main paper containing class fee setup */
+.principal-dashboard > .MuiPaper-root {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.04);
+}
+
+/* Table overflow container */
+.principal-dashboard .table-container {
+  overflow-x: auto;
+  padding-top: 6px;
+}
+
+/* Buttons in table row */
+.principal-dashboard .MuiButton-root {
+  text-transform: none;
+}
+
+/* Dialog previews */
+.principal-dashboard .MuiDialog-paper {
+  border-radius: 12px;
+}
+
+@media (min-width: 960px) {
+  .principal-dashboard .stat-card {
+    min-height: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+
+
+/* Fund chips styling */
+.principal-dashboard .fund-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.principal-dashboard .fund-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(34,197,94,0.12), rgba(59,130,246,0.08));
+  color: #083344;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+  transform: translateY(8px);
+  opacity: 0;
+  animation: chipIn 420ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+.principal-dashboard .fund-chip:hover {
+  transform: translateY(0) scale(1.03);
+  box-shadow: 0 10px 26px rgba(16,24,40,0.08);
+}
+
+.principal-dashboard .fund-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6));
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset;
+}
+
+.principal-dashboard .fund-name { color: #064e3b; }
+.principal-dashboard .fund-percent { color: #0f172a; opacity: 0.85; }
+.principal-dashboard .fund-eq { color: #0f172a; opacity: 0.6; margin: 0 4px; }
+.principal-dashboard .fund-amount { color: #075985; font-weight: 700; }
+
+@keyframes chipIn {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Give each nth chip a distinct dot color */
+.principal-dashboard .fund-list .fund-chip:nth-child(1) .fund-dot { background: #ff7a7a; }
+.principal-dashboard .fund-list .fund-chip:nth-child(2) .fund-dot { background: #fbbf24; }
+.principal-dashboard .fund-list .fund-chip:nth-child(3) .fund-dot { background: #60a5fa; }
+.principal-dashboard .fund-list .fund-chip:nth-child(4) .fund-dot { background: #34d399; }
+.principal-dashboard .fund-list .fund-chip:nth-child(5) .fund-dot { background: #a78bfa; }
+.principal-dashboard .fund-list .fund-chip:nth-child(6) .fund-dot { background: #fb7185; }
+.principal-dashboard .fund-list .fund-chip:nth-child(7) .fund-dot { background: #f97316; }
+.principal-dashboard .fund-list .fund-chip:nth-child(8) .fund-dot { background: #60a5fa; }
+
+/* Slight stagger for chips animation */
+.principal-dashboard .fund-chip:nth-child(1) { animation-delay: 0s; }
+.principal-dashboard .fund-chip:nth-child(2) { animation-delay: 0.04s; }
+.principal-dashboard .fund-chip:nth-child(3) { animation-delay: 0.08s; }
+.principal-dashboard .fund-chip:nth-child(4) { animation-delay: 0.12s; }
+.principal-dashboard .fund-chip:nth-child(5) { animation-delay: 0.16s; }
+.principal-dashboard .fund-chip:nth-child(6) { animation-delay: 0.20s; }
+.principal-dashboard .fund-chip:nth-child(7) { animation-delay: 0.24s; }
+.principal-dashboard .fund-chip:nth-child(8) { animation-delay: 0.28s; }
+
+/* Section header */
+.principal-dashboard .section-header { margin-bottom: 6px; }
+.principal-dashboard .section-title { font-size: 1.25rem; }
+.principal-dashboard .section-subtitle { color: #475569; }
+
+/* Table styles */
+.principal-dashboard .class-fee-table { min-width: 720px; }
+.principal-dashboard .tbl-head { color: #0f172a; font-weight: 700; }
+.principal-dashboard .class-name { font-weight: 600; color: #064e3b; }
+.principal-dashboard .teacher-name { color: #334155; opacity: 0.9; }
+.principal-dashboard .total-fee { font-weight: 800; color: #0b5e52; }
+.principal-dashboard .actions-cell .outline-btn { border-radius: 12px; text-transform: none; }
+
+/* Row hover */
+.principal-dashboard .class-fee-table tbody tr:hover { background: linear-gradient(90deg, rgba(14,165,233,0.02), rgba(16,185,129,0.02)); }
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+  .principal-dashboard .fund-chip { font-size: 0.82rem; padding: 5px 8px; }
+  .principal-dashboard .class-fee-table { min-width: 520px; }
+  .principal-dashboard .stat-card { padding: 12px; }
+  .principal-dashboard .stat-card .MuiTypography-h4, .principal-dashboard .stat-card .MuiTypography-h5 { font-size: 1.2rem; }
+  .principal-dashboard .section-title { font-size: 1.1rem; }
+  .principal-dashboard .class-fee-paper { padding: 12px; }
+  .principal-dashboard .table-container { overflow-x: auto; }
+}
+
+@media (max-width: 480px) {
+  .principal-dashboard .stat-card { width: 100%; display: block; }
+  .principal-dashboard .stat-card + .stat-card { margin-top: 10px; }
+  .principal-dashboard .fund-list { gap: 6px; }
+  .principal-dashboard .fund-chip { font-size: 0.78rem; padding: 4px 6px; }
+  .principal-dashboard .class-fee-table { min-width: 420px; }
+  .principal-dashboard .section-subtitle { display: none; }
+}
+
+/* Ensure stat cards are uniform on mobile */
+@media (max-width: 720px) {
+  .principal-dashboard .stat-card {
+    width: 100%;
+    min-height: 88px;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px !important;
+  }
+  .principal-dashboard .stat-card .MuiTypography-h4 { font-size: 1.3rem; }
+}
+
+/* Make class fee rows look consistent on small screens */
+@media (max-width: 600px) {
+  .principal-dashboard .class-fee-table tbody tr { padding: 10px; }
+  .principal-dashboard .class-fee-table tbody tr td { padding: 6px 0; }
+  .principal-dashboard .fund-chip { padding: 5px 7px; }
+}
+
+
