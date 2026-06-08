@@ -1,0 +1,96 @@
+.teachers-page { display:block; }
+
+.section-header { display:flex; align-items:center; gap:12px; }
+.section-title { font-size:1.4rem; }
+
+.add-btn { background: #0f766e !important; color: #fff !important; border-radius: 8px; padding: 8px 16px; box-shadow: 0 6px 18px rgba(15,118,110,0.12); }
+
+.teachers-paper { padding: 18px; border-radius: 12px; background: #fff; box-shadow: 0 8px 24px rgba(16,24,40,0.04); }
+/* allow horizontal scroll on small screens */
+.teachers-paper { overflow-x: auto; }
+
+/* Card style for small screens */
+.teacher-card {
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(16,24,40,0.06);
+  width: 100%;
+  overflow: hidden;
+}
+.teacher-card .MuiCardContent-root { padding-bottom: 6px; }
+
+/* Make teacher cards uniform and full-width on mobile */
+@media (max-width: 720px) {
+  .teacher-card {
+    width: 100%;
+    min-height: 170px;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px;
+  }
+  .teacher-card .MuiCardContent-root {
+    padding: 6px 0;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .teacher-card .MuiCardActions-root {
+    margin-top: auto;
+    padding: 8px 0 0;
+  }
+  .teacher-card .MuiTypography-h6,
+  .teacher-card .MuiTypography-body2,
+  .teacher-card .MuiTypography-caption {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .teacher-card {
+    min-height: 180px;
+    height: 180px;
+    width: 100%;
+  }
+  .teacher-card .MuiTypography-h6,
+  .teacher-card .MuiTypography-body2,
+  .teacher-card .MuiTypography-caption {
+    white-space: nowrap;
+  }
+}
+
+.teachers-table { min-width: 760px; border-collapse: separate; border-spacing: 0 10px; }
+.teachers-table thead .tbl-head { color: #0f172a; font-weight: 700; }
+.teachers-table tbody tr { background: #fff; border-radius: 10px; }
+.teachers-table tbody tr td { border-bottom: none; padding: 18px 12px; }
+.teachers-table tbody tr:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(16,24,40,0.06); }
+
+.teacher-name { font-weight:600; color:#064e3b; }
+.teacher-email { color:#334155; }
+.teacher-username { color:#475569; }
+.teacher-classes { color:#475569; opacity:0.9; }
+
+.action-stack .outline-btn { border-radius: 8px; text-transform: none; }
+.delete-btn { color: #dc2626; }
+
+/* Dialog tweaks */
+.MuiDialog-paper { border-radius: 12px; }
+
+@media (max-width: 720px) {
+  .teachers-table { min-width: 520px; }
+  .add-btn { padding: 6px 12px; }
+  .teacher-card { padding: 12px; width: 100%; }
+  .teacher-card .MuiCardContent-root { padding-bottom: 4px; }
+  .teachers-paper { padding: 12px; }
+}
+
+@media (max-width: 480px) {
+  .teachers-table thead { display: none; }
+  .teachers-table tbody tr { display: block; margin-bottom: 12px; }
+  .teachers-table tbody tr td { display: block; width: 100%; padding: 8px 10px; }
+  .action-stack { margin-top: 8px; }
+  .teacher-card { min-height: 100px; width: 330px; }
+}
